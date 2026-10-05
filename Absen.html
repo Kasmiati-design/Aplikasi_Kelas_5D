@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="id"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20261005-04-df3a3b1","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YACgEZulLoA,0","Arial Narrow":"YAGyDvJ_4Ts,0","Arial Rounded MT Bold":"YAFcfoaHu-s,0","Arial":"YAGyDvJ_4Ts,0","Avenir Next":"YAFcfmNq6UY,0","Baloo 2":"YADK30bC6HQ,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAFcfvtOAUY,1","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHQutsX00Q,0","Hanken Grotesk":"YAFcfhwp99E,0","Helvetica Neue":"YAFcf6CtJfI,0","Helvetica":"YAFcf6CtJfI,0","IBM Plex Mono":"YAFdJkmvhGI,0","Impact":"YAFcfnjI7Vk,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YADK3zbC6RM,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Pacifico":"YADLjORQ1u4,0","Phantom Sans":"YAFdJvgJ5TU,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAGvf3_u0_Q,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Source Serif 4":"YACgEfdj394,0","Space Grotesk":"YADZ-dYEmhg,0","Space Mono":"YADW1-vpsoc,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","UV Display":"YAEdVfSSpYo,0","UV Sans":"YAFdJvgJ5TU,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YAD1aFjegN8,0","ui-sans-serif":"YACkoD1yZN0,0"}}');</script><script src="/_sdk/6542d56fbfe7a3eb.telemetry_sdk.js" integrity="sha512-ECdM0nK7EkwDuOqho2qxgyRQXyBHk9hZqRKMBr+Xsu6zjeHlt+qkO2N2YRiHN7Kg4e1fEHDhjIp4bGJYVypv1g=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sekolah Absenku</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root { --blue:#2563eb; --navy:#123a86; --sky:#eaf3ff; --ink:#17315e; }
+    * { box-sizing:border-box; }
+    body { font-family:"DM Sans",sans-serif; color:var(--ink); }
+    .app-shell { width:100%; min-height:calc(100 * min(var(--vh, 1vh), 1vh)); }
+    .soft-card { box-shadow:0 12px 32px rgba(43,91,168,.10); }
+    .nav-item { transition:.2s ease; }
+    .nav-item:hover,.nav-item.active { background:#dceaff; color:#1555c0; }
+    .view { display:none; }
+    .view.active { display:block; animation:appear .25s ease-out; }
+    .login-screen { min-height:calc(100 * min(var(--vh, 1vh), 1vh)); background:linear-gradient(135deg,#e9f3ff 0%,#f7fbff 52%,#dceaff 100%); }
+    .role-card { transition:transform .2s, box-shadow .2s; }
+    .role-card:hover { transform:translateY(-5px); box-shadow:0 16px 30px rgba(37,99,235,.18); }
+    .modal { display:none; }
+    .modal.show { display:flex; }
+    .toast { transform:translateY(120px); opacity:0; transition:.25s; }
+    .toast.show { transform:translateY(0); opacity:1; }
+    .calendar-day { min-height:52px; }
+    .admin-access { position:fixed; right:18px; bottom:16px; z-index:25; }
+    .admin-only { display:none!important; }
+    body.admin-active .admin-only { display:block!important; }
+    body.admin-active button.admin-only { display:inline-flex!important; }
+    body.admin-active .recap-nav { display:flex!important; }
+    @keyframes appear { from { opacity:0; transform:translateY(8px) } to { opacity:1; transform:translateY(0) } }
+    @media print {
+      .no-print, #login-screen, #app-header, #sidebar, .toast { display:none!important; }
+      #app-screen { display:block!important; }
+      #main-content { margin:0!important; padding:0!important; }
+      .view { display:none!important; }
+      #recap-view { display:block!important; }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/6c2ecc939521f244.data_sdk.js" type="text/javascript" integrity="sha512-gRx8s+XsZDN6mSIQu2sivLZysbV0WHhb5kXNUWlgVb5lCMU1foJYukyMEDPv8Tnoocb8iwqB4XdRrWc7oEGzIQ=="></script>
+  <script src="/_sdk/cfda8dc081c3323c.editing_sdk.js" type="text/javascript" integrity="sha512-dNfMrWh4XAlHjsc8SoR2pkFBBcWdfifAFLC3yNCmnfoD4mTTxOtHMNSuGJMI2GUW0TArNoXmc/EAqYu/Ip9Yiw=="></script>
+  <script src="/_sdk/ab4336f91e694f96.resizing_sdk.js" type="text/javascript" integrity="sha512-cxmeUrBrNlwwLr+tEu/iwM5F3boeK4qDMoH3QjUPqJptkO5NkaDVhQvyIHIn+3EflI5/uubWzkSA78B1tCswgA=="></script>
+ </head>
+ <body data-template-id="__page-root" style="background: rgb(248, 251, 255);">
+  <div class="app-shell">
+   <section id="login-screen" class="login-screen w-full flex items-center justify-center p-5">
+    <div class="w-full max-w-5xl">
+     <div class="text-center mb-9">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-blue-600 text-white shadow-lg mb-4"><i data-lucide="school" class="w-8 h-8"></i>
+      </div>
+      <h1 data-template-id="login-title" class="canva-text font-extrabold text-4xl text-blue-950" style="color: rgb(23, 49, 94); font-weight: 800; font-style: normal; font-size: 32px;">Sekolah Absenku</h1>
+      <p data-template-id="login-subtitle" class="canva-text mt-2 text-slate-600" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">Portal aktivitas belajar dan absensi kelas 5D</p>
+     </div>
+     <div id="role-picker" class="grid md:grid-cols-3 gap-5"><button type="button" class="role-card bg-white rounded-3xl p-7 text-left soft-card focus:outline-none focus:ring-4 focus:ring-blue-200" data-role="Siswa"> <span class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mb-5"><i data-lucide="graduation-cap"></i></span> <span data-template-id="role-student-title" class="canva-text block font-bold text-xl text-blue-950" style="color: rgb(23, 49, 94); font-weight: 700; font-style: normal; font-size: 16px;">Siswa</span> <span data-template-id="role-student-desc" class="canva-text block mt-2 text-sm text-slate-500" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">Absen, lihat nilai, dan pantau tugas.</span> </button> <button type="button" class="role-card bg-white rounded-3xl p-7 text-left soft-card focus:outline-none focus:ring-4 focus:ring-blue-200" data-role="Guru"> <span class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-5"><i data-lucide="book-open-check"></i></span> <span data-template-id="role-teacher-title" class="canva-text block font-bold text-xl text-blue-950" style="color: rgb(23, 49, 94); font-weight: 700; font-style: normal; font-size: 16px;">Guru</span> <span data-template-id="role-teacher-desc" class="canva-text block mt-2 text-sm text-slate-500" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">Catat kehadiran dan input nilai siswa.</span> </button> <button type="button" class="role-card bg-white rounded-3xl p-7 text-left soft-card focus:outline-none focus:ring-4 focus:ring-blue-200" data-role="Admin"> <span class="w-12 h-12 rounded-2xl bg-violet-100 text-violet-600 flex items-center justify-center mb-5"><i data-lucide="settings"></i></span> <span data-template-id="role-admin-title" class="canva-text block font-bold text-xl text-blue-950" style="color: rgb(23, 49, 94); font-weight: 700; font-style: normal; font-size: 16px;">Admin</span> <span data-template-id="role-admin-desc" class="canva-text block mt-2 text-sm text-slate-500" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">Kelola tugas, statistik, dan rekap kelas.</span> </button>
+     </div>
+     <form id="student-identity" class="hidden max-w-md mx-auto bg-white p-7 rounded-3xl soft-card mt-5">
+      <h2 data-template-id="identity-title" class="canva-text font-bold text-2xl text-blue-950" style="color: rgb(23, 49, 94); font-weight: 700; font-style: normal; font-size: 24px;">Masuk sebagai siswa</h2>
+      <p data-template-id="identity-help" class="canva-text mt-1 text-slate-500 text-sm" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">Pilih identitasmu untuk membuka portal kelas 5D.</p><label data-template-id="student-label" for="student-select" class="canva-text block mt-5 mb-2 text-sm font-semibold text-slate-700" style="color: rgb(51, 65, 85); font-weight: 600; font-style: normal; font-size: 16px;">Nama siswa</label> <select id="student-select" class="w-full rounded-xl border border-blue-100 bg-slate-50 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-blue-100"> <option value="">Pilih nama siswa</option><option>Adiba Shakila Anindita</option><option>Aisha Lamira Herian</option><option>Alqis Alfredo Agathis</option><option>Andi Syabil Dwipradipta</option><option>Arsyad Reyhan Ardhani</option><option>Azka Ubaidah Rahmah</option><option>Dhizagia Qatrunnada Azizah Pandelaki</option><option>Dwi Salsabilla Anggraini</option><option>Eka Zahira Marwa</option><option>Eza Alfarid Sanitiya</option><option>Fahry Setiawan</option><option>Fellisya Zahra Maulaya</option><option>Ghina Syakira Annisa</option><option>Leora Fia Alfarizqia</option><option>M. Azka Anja Kusuma</option><option>Mariam Syafiya Rahma</option><option>Muhammad Akmal Febrian</option><option>Muhammad Akmal Norhansyah</option><option>Muhammad Al Hafiz</option><option>Muhammad Arif Ramadan</option><option>Muhammad Arjuna Firmansyah</option><option>Muhammad Lutfi Arfandi</option><option>Muhammad Yusuf Abdullah</option><option>Quentin As-Syifa Fikri</option><option>Rizka Alyssa Azzahra</option><option>Sakira Bilqis Humaira</option><option>Salma Nurfitria</option><option>Wali</option> </select>
+      <div class="flex gap-3 mt-6"><button data-template-id="identity-back" id="identity-back" type="button" class="canva-button flex-1 rounded-xl bg-slate-100 px-4 py-3 font-semibold text-slate-700" style="background: rgb(241, 245, 249); color: rgb(51, 65, 85); font-weight: 600; font-style: normal; font-size: 16px;">Kembali</button> <button data-template-id="identity-enter" type="submit" class="canva-button flex-1 rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white" style="background: rgb(37, 99, 235); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Masuk</button>
+      </div>
+     </form>
+    </div><button type="button" class="admin-access rounded-full border border-slate-300 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-500 shadow-sm hover:bg-white focus:outline-none focus:ring-2 focus:ring-blue-300" data-role="Admin">Akses cepat Admin</button>
+   </section>
+   <section id="app-screen" class="hidden w-full min-h-screen bg-slate-50">
+    <header id="app-header" class="no-print sticky top-0 z-30 bg-white border-b border-blue-100 px-4 py-3">
+     <div class="flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3"><button id="mobile-menu" type="button" class="lg:hidden p-2 rounded-lg hover:bg-blue-50" aria-label="Buka navigasi"><i data-lucide="menu"></i></button>
+       <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center">
+        <i data-lucide="school"></i>
+       </div>
+       <div>
+        <h1 data-template-id="app-title" class="canva-text font-extrabold text-blue-950" style="color: rgb(23, 49, 94); font-weight: 800; font-style: normal; font-size: 32px;">Sekolah Absenku</h1>
+        <p id="header-context" class="text-xs text-slate-500">Kelas 5D</p>
+       </div>
+      </div><button id="header-logout" type="button" class="no-print p-2.5 rounded-xl text-slate-500 hover:text-red-600 hover:bg-red-50" aria-label="Keluar"><i data-lucide="log-out"></i></button>
+     </div>
+    </header>
+    <aside id="sidebar" class="no-print fixed lg:sticky top-[65px] left-0 z-20 lg:float-left w-72 lg:w-64 h-[calc(100*min(var(--vh,1vh),1vh)-65px)] bg-white border-r border-blue-100 p-4 transform -translate-x-full lg:translate-x-0 transition-transform duration-200">
+     <nav class="space-y-1"><button class="nav-item active w-full flex items-center gap-3 rounded-xl px-4 py-3 text-left font-semibold" data-view="dashboard-view"><i data-lucide="layout-dashboard" class="w-5"></i><span data-template-id="nav-dashboard" class="canva-text" style="color: rgb(23, 49, 94); font-weight: 600; font-style: normal; font-size: 16px;">Dashboard</span></button> <button class="nav-item w-full flex items-center gap-3 rounded-xl px-4 py-3 text-left font-semibold" data-view="attendance-view"><i data-lucide="calendar-check" class="w-5"></i><span data-template-id="nav-attendance" class="canva-text" style="color: rgb(23, 49, 94); font-weight: 600; font-style: normal; font-size: 16px;">Absensi</span></button> <button class="nav-item w-full flex items-center gap-3 rounded-xl px-4 py-3 text-left font-semibold" data-view="scores-view"><i data-lucide="award" class="w-5"></i><span data-template-id="nav-scores" class="canva-text" style="color: rgb(23, 49, 94); font-weight: 600; font-style: normal; font-size: 16px;">Nilai</span></button> <button class="nav-item w-full flex items-center gap-3 rounded-xl px-4 py-3 text-left font-semibold" data-view="assignments-view"><i data-lucide="clipboard-list" class="w-5"></i><span data-template-id="nav-assignments" class="canva-text" style="color: rgb(23, 49, 94); font-weight: 600; font-style: normal; font-size: 16px;">Tugas</span></button> <button class="nav-item recap-nav w-full flex items-center gap-3 rounded-xl px-4 py-3 text-left font-semibold" data-view="attendance-recap-view"><i data-lucide="calendar-check" class="w-5"></i><span data-template-id="nav-recap-attendance" class="canva-text" style="color: rgb(23, 49, 94); font-weight: 600; font-style: normal; font-size: 16px;">Rekap Absen</span></button><button class="nav-item recap-nav w-full flex items-center gap-3 rounded-xl px-4 py-3 text-left font-semibold" data-view="score-recap-view"><i data-lucide="award" class="w-5"></i><span data-template-id="nav-recap-scores" class="canva-text" style="color: rgb(23, 49, 94); font-weight: 600; font-style: normal; font-size: 16px;">Rekap Nilai</span></button><button class="nav-item recap-nav w-full flex items-center gap-3 rounded-xl px-4 py-3 text-left font-semibold" data-view="task-recap-view"><i data-lucide="clipboard-list" class="w-5"></i><span data-template-id="nav-recap-tasks" class="canva-text" style="color: rgb(23, 49, 94); font-weight: 600; font-style: normal; font-size: 16px;">Rekap Tugas</span></button> <button id="help-button" class="nav-item w-full flex items-center gap-3 rounded-xl px-4 py-3 text-left font-semibold"><i data-lucide="circle-help" class="w-5"></i><span data-template-id="nav-help" class="canva-text" style="color: rgb(23, 49, 94); font-weight: 600; font-style: normal; font-size: 16px;">Bantuan</span></button>
+      <hr class="my-3 border-blue-100"><button id="sidebar-logout" class="nav-item w-full flex items-center gap-3 rounded-xl px-4 py-3 text-left font-semibold text-red-600"><i data-lucide="log-out" class="w-5"></i><span data-template-id="nav-logout" class="canva-text" style="color: rgb(220, 38, 38); font-weight: 600; font-style: normal; font-size: 16px;">Keluar</span></button>
+     </nav>
+    </aside>
+    <main id="main-content" class="lg:ml-64 p-4 md:p-7">
+     <section id="dashboard-view" class="view active">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-6">
+       <div>
+        <p id="today-date" class="text-sm text-blue-600 font-semibold"></p>
+        <h2 data-template-id="dashboard-title" class="canva-text font-extrabold text-3xl text-blue-950" style="color: rgb(23, 49, 94); font-weight: 800; font-style: normal; font-size: 24px;">Dashboard Kelas 5D</h2>
+        <p id="dashboard-greeting" class="mt-1 text-slate-500"></p>
+       </div><span id="role-badge" class="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 font-semibold text-blue-700"></span>
+      </div>
+      <div id="stats-grid" class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6"></div>
+      <div class="grid xl:grid-cols-5 gap-6">
+       <div class="xl:col-span-3 bg-white rounded-3xl p-6 soft-card">
+        <div class="flex justify-between gap-3">
+         <div>
+          <h3 data-template-id="calendar-title" class="canva-text font-bold text-xl" style="color: rgb(23, 49, 94); font-weight: 700; font-style: normal; font-size: 19px;">Kalender belajar</h3>
+          <p id="calendar-month" class="mt-1 text-sm text-slate-500"></p>
+         </div><i data-lucide="calendar-days" class="text-blue-500"></i>
+        </div>
+        <div class="grid grid-cols-7 text-center text-xs text-slate-400 font-bold mt-5">
+         <span>Min</span><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span>
+        </div>
+        <div id="calendar-grid" class="grid grid-cols-7 gap-1 mt-2"></div>
+       </div>
+       <div class="xl:col-span-2 bg-gradient-to-br from-blue-700 to-blue-500 rounded-3xl p-6 text-white soft-card"><i data-lucide="sparkles" class="w-7 h-7 text-blue-100"></i>
+        <h3 data-template-id="motivation-title" class="canva-text mt-7 font-bold text-2xl" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 19px;">Semangat belajar!</h3>
+        <p data-template-id="motivation-text" class="canva-text mt-3 text-blue-100 leading-relaxed" style="color: rgb(219, 234, 254); font-weight: 400; font-style: normal; font-size: 16px;">Setiap tugas yang diselesaikan dan kehadiran yang tercatat adalah langkah kecil menuju prestasi besar.</p>
+       </div>
+      </div>
+     </section>
+     <section id="attendance-view" class="view">
+      <h2 data-template-id="attendance-title" class="canva-text font-extrabold text-3xl text-blue-950" style="color: rgb(23, 49, 94); font-weight: 800; font-style: normal; font-size: 24px;">Absensi</h2>
+      <p data-template-id="attendance-subtitle" class="canva-text mt-1 text-slate-500" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">Catat dan pantau kehadiran kelas dengan waktu WITA.</p>
+      <div id="student-attendance-panel" class="mt-6 grid xl:grid-cols-3 gap-6">
+       <article class="xl:col-span-1 rounded-3xl bg-white p-6 soft-card">
+        <p data-template-id="today-status-label" class="canva-text text-sm font-bold text-slate-500" style="color: rgb(100, 116, 139); font-weight: 700; font-style: normal; font-size: 16px;">STATUS HARI INI</p>
+        <p id="attendance-status" class="mt-2 text-2xl font-extrabold text-blue-950">Belum absen</p>
+        <p id="wita-clock" class="mt-1 text-sm text-slate-500"></p>
+        <div class="grid gap-3 mt-6"><button data-template-id="checkin-button" id="checkin-btn" type="button" class="canva-button rounded-xl bg-blue-600 px-4 py-3 text-white font-bold disabled:opacity-50" style="background: rgb(37, 99, 235); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Absen Masuk</button> <button data-template-id="checkout-button" id="checkout-btn" type="button" class="canva-button rounded-xl bg-blue-100 px-4 py-3 text-blue-700 font-bold disabled:opacity-50" style="background: rgb(219, 234, 254); color: rgb(29, 78, 216); font-weight: 700; font-style: normal; font-size: 16px;">Absen Pulang</button>
+        </div>
+        <p data-template-id="attendance-time-note" class="canva-text mt-5 text-xs leading-relaxed text-slate-500" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">Absen masuk tersedia sebelum pukul 08.00 WITA. Absen pulang tersedia mulai pukul 11.00 WITA.</p>
+       </article>
+       <article class="xl:col-span-2 rounded-3xl bg-white p-6 soft-card">
+        <h3 data-template-id="attendance-history-title" class="canva-text font-bold text-xl" style="color: rgb(23, 49, 94); font-weight: 700; font-style: normal; font-size: 19px;">Riwayat absensi</h3>
+        <div class="overflow-x-auto mt-4">
+         <table class="w-full text-sm">
+          <thead class="text-left text-slate-400">
+           <tr>
+            <th class="pb-3">Tanggal</th>
+            <th class="pb-3">Status</th>
+            <th class="pb-3">Masuk</th>
+            <th class="pb-3">Pulang</th>
+           </tr>
+          </thead>
+          <tbody id="attendance-history"></tbody>
+         </table>
+        </div>
+       </article>
+      </div>
+      <article id="teacher-attendance-panel" class="hidden mt-6 bg-white rounded-3xl p-6 soft-card max-w-2xl">
+       <h3 data-template-id="teacher-attendance-title" class="canva-text font-bold text-xl" style="color: rgb(23, 49, 94); font-weight: 700; font-style: normal; font-size: 19px;">Catat kehadiran siswa</h3>
+       <form id="teacher-attendance-form" class="grid md:grid-cols-2 gap-4 mt-5">
+        <div>
+         <label for="teacher-student" class="block mb-2 font-semibold text-sm">Nama siswa</label><select id="teacher-student" class="w-full p-3 rounded-xl border border-slate-200"></select>
+        </div>
+        <div>
+         <label for="teacher-status" class="block mb-2 font-semibold text-sm">Status kehadiran</label><select id="teacher-status" class="w-full p-3 rounded-xl border border-slate-200"><option>Hadir</option><option>Izin</option><option>Sakit</option><option>Alpa</option></select>
+        </div><button data-template-id="teacher-attendance-submit" class="canva-button md:col-span-2 rounded-xl bg-blue-600 py-3 text-white font-bold" type="submit" style="background: rgb(37, 99, 235); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Simpan Kehadiran</button>
+       </form>
+      </article>
+     </section>
+     <section id="scores-view" class="view">
+      <h2 data-template-id="scores-title" class="canva-text font-extrabold text-3xl text-blue-950" style="color: rgb(23, 49, 94); font-weight: 800; font-style: normal; font-size: 24px;">Nilai</h2>
+      <p data-template-id="scores-subtitle" class="canva-text mt-1 text-slate-500" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">Pantau perkembangan hasil belajar kelas 5D.</p>
+      <div class="grid xl:grid-cols-3 gap-6 mt-6">
+       <article class="xl:col-span-2 bg-white rounded-3xl p-6 soft-card">
+        <h3 data-template-id="score-list-title" class="canva-text font-bold text-xl" style="color: rgb(23, 49, 94); font-weight: 700; font-style: normal; font-size: 19px;">Nilai terbaru</h3>
+        <div id="score-list" class="mt-4 space-y-3"></div>
+       </article>
+       <article id="teacher-score-panel" class="hidden bg-white rounded-3xl p-6 soft-card">
+        <h3 data-template-id="teacher-score-title" class="canva-text font-bold text-xl" style="color: rgb(23, 49, 94); font-weight: 700; font-style: normal; font-size: 19px;">Input nilai siswa</h3>
+        <form id="score-form" class="space-y-4 mt-5">
+         <div>
+          <label for="score-student" class="block mb-2 text-sm font-semibold">Nama siswa</label><select id="score-student" class="w-full p-3 rounded-xl border border-slate-200"></select>
+         </div>
+         <div>
+          <label for="score-subject" class="block mb-2 text-sm font-semibold">Mata pelajaran</label><select id="score-subject" class="w-full p-3 rounded-xl border border-slate-200"><option>Bahasa Indonesia</option><option>Matematika</option><option>IPA</option><option>IPS</option><option>Pendidikan Pancasila</option></select>
+         </div>
+         <div>
+          <label for="score-value" class="block mb-2 text-sm font-semibold">Nilai (0–100)</label><input id="score-value" type="number" min="0" max="100" required="" class="w-full p-3 rounded-xl border border-slate-200">
+         </div><button data-template-id="score-submit" type="submit" class="canva-button w-full rounded-xl bg-blue-600 py-3 text-white font-bold" style="background: rgb(37, 99, 235); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Simpan Nilai</button>
+        </form>
+       </article>
+      </div>
+     </section>
+     <section id="assignments-view" class="view">
+      <h2 data-template-id="assignments-title" class="canva-text font-extrabold text-3xl text-blue-950" style="color: rgb(23, 49, 94); font-weight: 800; font-style: normal; font-size: 24px;">Tugas</h2>
+      <p data-template-id="assignments-subtitle" class="canva-text mt-1 text-slate-500" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 16px;">Temukan tugas kelas dan pantau status pengumpulannya.</p>
+      <div class="grid xl:grid-cols-3 gap-6 mt-6">
+       <div id="assignment-list" class="xl:col-span-2 grid gap-4"></div>
+       <article id="assignment-create-panel" class="hidden bg-white rounded-3xl p-6 soft-card h-fit">
+        <h3 data-template-id="create-assignment-title" class="canva-text font-bold text-xl" style="color: rgb(23, 49, 94); font-weight: 700; font-style: normal; font-size: 19px;">Buat tugas baru</h3>
+        <form id="assignment-form" class="space-y-4 mt-5">
+         <div>
+          <label for="assignment-title-input" class="block mb-2 text-sm font-semibold">Judul tugas</label><input id="assignment-title-input" required="" class="w-full p-3 rounded-xl border border-slate-200">
+         </div>
+         <div>
+          <label for="assignment-subject-input" class="block mb-2 text-sm font-semibold">Mata pelajaran</label><input id="assignment-subject-input" required="" class="w-full p-3 rounded-xl border border-slate-200">
+         </div>
+         <div>
+          <label for="assignment-link-input" class="block mb-2 text-sm font-semibold">Tautan Google Classroom</label><input id="assignment-link-input" type="url" required="" placeholder="https://classroom.google.com/..." class="w-full p-3 rounded-xl border border-slate-200">
+         </div><button data-template-id="assignment-submit" type="submit" class="canva-button w-full rounded-xl bg-blue-600 py-3 text-white font-bold" style="background: rgb(37, 99, 235); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Buat Tugas</button>
+        </form>
+       </article>
+      </div>
+     </section>
+     <section id="attendance-recap-view" class="view admin-only">
+      <h2 class="font-extrabold text-3xl text-blue-950">Rekap Absen</h2><button type="button" class="recap-download admin-only mt-4 rounded-xl bg-blue-600 px-4 py-3 text-white font-bold" data-kind="attendance">Download Rekap Absen</button>
+      <div class="mt-5 bg-white rounded-3xl p-6 soft-card overflow-x-auto">
+       <table class="w-full text-sm">
+        <thead>
+         <tr>
+          <th class="p-3">Siswa</th>
+          <th class="p-3">ID</th>
+          <th class="p-3">Kelas</th>
+          <th class="p-3">Tanggal</th>
+          <th class="p-3">Status</th>
+          <th class="p-3">Masuk / Pulang</th>
+         </tr>
+        </thead>
+        <tbody id="attendance-recap-table"></tbody>
+       </table>
+      </div>
+     </section>
+     <section id="score-recap-view" class="view admin-only">
+      <h2 class="font-extrabold text-3xl text-blue-950">Rekap Nilai</h2><button type="button" class="recap-download admin-only mt-4 rounded-xl bg-blue-600 px-4 py-3 text-white font-bold" data-kind="score">Download Rekap Nilai</button>
+      <div class="mt-5 bg-white rounded-3xl p-6 soft-card overflow-x-auto">
+       <table class="w-full text-sm">
+        <thead>
+         <tr>
+          <th class="p-3">Siswa</th>
+          <th class="p-3">ID</th>
+          <th class="p-3">Kelas</th>
+          <th class="p-3">Mata pelajaran</th>
+          <th class="p-3">Tanggal</th>
+          <th class="p-3">Nilai</th>
+         </tr>
+        </thead>
+        <tbody id="score-recap-table"></tbody>
+       </table>
+      </div>
+     </section>
+     <section id="task-recap-view" class="view admin-only">
+      <h2 class="font-extrabold text-3xl text-blue-950">Rekap Tugas</h2><button type="button" class="recap-download admin-only mt-4 rounded-xl bg-blue-600 px-4 py-3 text-white font-bold" data-kind="task">Download Rekap Tugas</button>
+      <div class="mt-5 bg-white rounded-3xl p-6 soft-card overflow-x-auto">
+       <table class="w-full text-sm">
+        <thead>
+         <tr>
+          <th class="p-3">Siswa</th>
+          <th class="p-3">ID</th>
+          <th class="p-3">Tugas</th>
+          <th class="p-3">Status pengumpulan</th>
+          <th class="p-3">Pemahaman</th>
+          <th class="p-3">Alasan</th>
+          <th class="p-3">Tanggal</th>
+         </tr>
+        </thead>
+        <tbody id="task-recap-table"></tbody>
+       </table>
+      </div>
+     </section>
+    </main>
+   </section>
+   <div id="help-modal" class="modal fixed inset-0 z-50 items-center justify-center p-4 bg-slate-950/45">
+    <div class="w-full max-w-lg rounded-3xl bg-white p-7 shadow-2xl">
+     <div class="flex items-start justify-between gap-4">
+      <div>
+       <span class="w-11 h-11 bg-blue-100 text-blue-600 rounded-xl inline-flex items-center justify-center"><i data-lucide="circle-help"></i></span>
+       <h2 data-template-id="help-title" class="canva-text mt-4 font-extrabold text-2xl text-blue-950" style="color: rgb(23, 49, 94); font-weight: 800; font-style: normal; font-size: 24px;">Bantuan Sekolah Absenku</h2>
+      </div><button id="close-help" class="p-2 rounded-lg hover:bg-slate-100" aria-label="Tutup bantuan"><i data-lucide="x"></i></button>
+     </div>
+     <p data-template-id="help-text" class="canva-text mt-4 leading-relaxed text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Siswa dapat melakukan absensi, melihat nilai, membuka tugas, dan mengisi refleksi. Guru dapat mencatat kehadiran serta nilai. Admin dapat membuat tugas, melihat statistik, dan mengunduh atau mencetak rekap data.</p><button data-template-id="help-close" id="help-close-button" class="canva-button mt-6 rounded-xl bg-blue-600 px-5 py-3 font-bold text-white" style="background: rgb(37, 99, 235); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Mengerti</button>
+    </div>
+   </div>
+   <div id="toast" class="toast fixed bottom-5 right-5 z-[60] max-w-sm rounded-xl px-5 py-4 text-white shadow-xl"></div>
+  </div>
+  <script>
+    const students = ["Adiba Shakila Anindita","Aisha Lamira Herian","Alqis Alfredo Agathis","Andi Syabil Dwipradipta","Arsyad Reyhan Ardhani","Azka Ubaidah Rahmah","Dhizagia Qatrunnada Azizah Pandelaki","Dwi Salsabilla Anggraini","Eka Zahira Marwa","Eza Alfarid Sanitiya","Fahry Setiawan","Fellisya Zahra Maulaya","Ghina Syakira Annisa","Leora Fia Alfarizqia","M. Azka Anja Kusuma","Mariam Syafiya Rahma","Muhammad Akmal Febrian","Muhammad Akmal Norhansyah","Muhammad Al Hafiz","Muhammad Arif Ramadan","Muhammad Arjuna Firmansyah","Muhammad Lutfi Arfandi","Muhammad Yusuf Abdullah","Quentin As-Syifa Fikri","Rizka Alyssa Azzahra","Sakira Bilqis Humaira","Salma Nurfitria","Wali"];
+    const studentId = name => "5D-" + String(students.indexOf(name)+1).padStart(3,"0");
+    let currentRole = "", currentStudent = "", records = [], sdkReady = false;
+
+    const $ = id => document.getElementById(id);
+    const wita = () => new Date(Date.now() + (8 * 3600000));
+    const isoDate = () => wita().toISOString().slice(0,10);
+    const timeWita = () => wita().toISOString().slice(11,16) + " WITA";
+    const formatDate = d => d ? new Date(d + "T00:00:00").toLocaleDateString("id-ID",{day:"numeric",month:"short",year:"numeric"}) : "-";
+    const showToast = (message, type="success") => { const t=$("toast"); t.textContent=message; t.className="toast fixed bottom-5 right-5 z-[60] max-w-sm rounded-xl px-5 py-4 text-white shadow-xl show " + (type==="success"?"bg-emerald-600":"bg-red-600"); setTimeout(()=>t.classList.remove("show"),3500); };
+    const isTeacher = () => currentRole === "Guru";
+    const isAdmin = () => currentRole === "Admin";
+    const canManage = () => isTeacher() || isAdmin();
+
+    function setButtonsLoading(form, loading) {
+      form.querySelectorAll("button").forEach(b => b.disabled = loading);
+    }
+    async function createRecord(record, form) {
+      if (!sdkReady) return showToast("Canva Sheet belum siap. Coba lagi sebentar.", "error");
+      if (records.length >= 999) return showToast("Batas 999 data telah tercapai.", "error");
+      if(form) setButtonsLoading(form,true);
+      const result = await window.dataSdk.create(record);
+      if(form) setButtonsLoading(form,false);
+      if (!result.isOk) showToast("Data gagal disimpan. Silakan coba lagi.", "error");
+      return result.isOk;
+    }
+
+    const handler = { onDataChanged(data) { records = data; renderAll(); } };
+
+    async function initData() {
+      const result = await window.dataSdk.init(handler);
+      sdkReady = result.isOk;
+      if (!result.isOk) showToast("Tidak dapat membuka Canva Sheet.", "error");
+    }
+
+    function renderCalendar() {
+      const now=wita(), year=now.getUTCFullYear(), month=now.getUTCMonth(), today=now.getUTCDate();
+      $("calendar-month").textContent=new Intl.DateTimeFormat("id-ID",{month:"long",year:"numeric",timeZone:"UTC"}).format(new Date(Date.UTC(year,month,1)));
+      const grid=$("calendar-grid"); grid.innerHTML="";
+      for(let i=0;i<new Date(Date.UTC(year,month,1)).getUTCDay();i++) grid.insertAdjacentHTML("beforeend","<span></span>");
+      const days=new Date(Date.UTC(year,month+1,0)).getUTCDate();
+      for(let d=1;d<=days;d++) grid.insertAdjacentHTML("beforeend",`<span class="calendar-day flex items-center justify-center rounded-xl text-sm ${d===today?"bg-blue-600 text-white font-bold shadow-md":"text-slate-600 hover:bg-blue-50"}">${d}</span>`);
+    }
+
+    function renderStats() {
+      const attendance = records.filter(r=>r.record_type==="attendance");
+      const scores = records.filter(r=>r.record_type==="score");
+      const assignments = records.filter(r=>r.record_type==="assignment");
+      const mine = currentStudent ? attendance.filter(r=>r.student_name===currentStudent) : attendance;
+      const present = mine.filter(r=>r.attendance_status==="Hadir").length;
+      const average = scores.length ? Math.round(scores.reduce((a,r)=>a+(Number(r.score)||0),0)/scores.length) : 0;
+      const cards = currentRole==="Siswa" ? [
+        ["calendar-check","Kehadiran",""+present,"Hari tercatat"],
+        ["award","Nilai rata-rata",average||"—","Dari nilai terbaru"],
+        ["clipboard-list","Tugas",assignments.length,"Tugas tersedia"],
+        ["clock","Status hari ini",mine.some(r=>r.date===isoDate())?"Tercatat":"Belum","Absensi WITA"]
+      ] : [
+        ["users","Siswa kelas",students.length,"Kelas 5D"],
+        ["calendar-check","Data kehadiran",attendance.length,"Total catatan"],
+        ["award","Nilai tercatat",scores.length,"Lima mata pelajaran"],
+        ["clipboard-list","Tugas aktif",assignments.length,"Dibuat admin"]
+      ];
+      $("stats-grid").innerHTML=cards.map(c=>`<article class="bg-white rounded-2xl p-5 soft-card"><div class="flex justify-between"><span class="w-10 h-10 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600"><i data-lucide="${c[0]}" class="w-5"></i></span></div><p class="mt-4 text-sm text-slate-500">${c[1]}</p><p class="text-2xl font-extrabold text-blue-950">${c[2]}</p><p class="mt-1 text-xs text-slate-400">${c[3]}</p></article>`).join("");
+    }
+
+    function renderAttendance() {
+      const list = currentStudent ? records.filter(r=>r.record_type==="attendance" && r.student_name===currentStudent) : records.filter(r=>r.record_type==="attendance");
+      const today = list.find(r=>r.date===isoDate());
+      $("attendance-status").textContent = today ? (today.check_out_time ? "Absensi lengkap" : "Sudah absen masuk") : "Belum absen";
+      $("wita-clock").textContent = "Sekarang: " + timeWita();
+      $("checkin-btn").disabled = !currentStudent || !!today?.check_in_time;
+      $("checkout-btn").disabled = !currentStudent || !today?.check_in_time || !!today?.check_out_time;
+      $("attendance-history").innerHTML=list.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,10).map(r=>`<tr class="border-t border-slate-100"><td class="py-3">${formatDate(r.date)}</td><td class="py-3"><span class="rounded-full bg-emerald-100 px-2 py-1 text-xs font-bold text-emerald-700">${r.attendance_status||"Hadir"}</span></td><td class="py-3">${r.check_in_time||"—"}</td><td class="py-3">${r.check_out_time||"—"}</td></tr>`).join("") || `<tr><td colspan="4" class="py-8 text-center text-slate-400">Belum ada riwayat absensi.</td></tr>`;
+    }
+
+    function renderScores() {
+      const list=(currentStudent?records.filter(r=>r.record_type==="score"&&r.student_name===currentStudent):records.filter(r=>r.record_type==="score")).slice().reverse();
+      $("score-list").innerHTML=list.map(r=>`<div class="flex items-center justify-between rounded-2xl border border-blue-50 p-4"><div><p class="font-bold">${r.subject}</p><p class="text-sm text-slate-500">${r.student_name} · ${formatDate(r.date)}</p></div><span class="rounded-xl bg-blue-100 px-4 py-2 font-extrabold text-blue-700">${r.score}</span></div>`).join("") || `<p class="py-8 text-center text-slate-400">Belum ada nilai yang ditampilkan.</p>`;
+    }
+
+    function renderAssignments() {
+      const assignments=records.filter(r=>r.record_type==="assignment").slice().reverse();
+      $("assignment-list").innerHTML=assignments.map(a=>{
+        const submission=records.find(r=>r.record_type==="submission"&&r.student_name===currentStudent&&r.assignment_title===a.assignment_title);
+        const status=submission?.assignment_status || "Belum dikumpulkan";
+        return `<article class="bg-white rounded-3xl p-6 soft-card"><div class="flex justify-between gap-4"><div><span class="text-xs font-bold text-blue-600">${a.subject}</span><h3 class="mt-1 text-xl font-bold">${a.assignment_title}</h3><p class="mt-2 text-sm text-slate-500">Dibuat ${formatDate(a.date)}</p></div><span class="h-fit rounded-full px-3 py-1 text-xs font-bold ${status==="Sudah dikumpulkan"?"bg-emerald-100 text-emerald-700":"bg-amber-100 text-amber-700"}">${status}</span></div><div class="flex flex-wrap gap-2 mt-5"><a href="${a.assignment_link}" target="_blank" rel="noopener noreferrer" class="rounded-xl bg-blue-100 px-4 py-2 text-sm font-bold text-blue-700">Buka Classroom</a>${currentRole==="Siswa"?`<button type="button" class="submit-assignment rounded-xl bg-blue-600 px-4 py-2 text-sm font-bold text-white" data-title="${a.assignment_title}">Tandai Dikumpulkan</button>`:""}</div>${currentRole==="Siswa"?`<label class="block mt-4 text-sm font-semibold">Status pemahaman<select class="understanding mt-2 w-full rounded-xl border border-slate-200 p-3" data-title="${a.assignment_title}"><option value="Paham" ${submission?.understanding_status==="Paham"?"selected":""}>Paham</option><option value="Tidak paham" ${submission?.understanding_status==="Tidak paham"?"selected":""}>Tidak paham</option></select></label><div class="reason-area ${submission?.understanding_status==="Tidak paham"?"":"hidden"}" data-title="${a.assignment_title}"><label class="block mt-3 text-sm font-semibold">Alasan<textarea class="reason-input mt-2 w-full rounded-xl border border-slate-200 p-3 text-sm" data-title="${a.assignment_title}" placeholder="Tuliskan bagian yang belum dipahami">${submission?.reason||""}</textarea></label><button type="button" class="send-reason mt-2 rounded-xl bg-amber-500 px-4 py-2 font-bold text-white" data-title="${a.assignment_title}">Kirim alasan</button></div>`:""}</article>`;
+      }).join("") || `<div class="rounded-3xl bg-white p-8 text-center text-slate-400 soft-card">Belum ada tugas yang dibuat.</div>`;
+    }
+
+    function renderRecap() {
+      const own = r => currentRole!=="Siswa" || r.student_name===currentStudent;
+      const att=records.filter(r=>r.record_type==="attendance"&&own(r));
+      const scores=records.filter(r=>r.record_type==="score"&&own(r));
+      const tasks=records.filter(r=>r.record_type==="submission"&&own(r));
+      $("attendance-recap-table").innerHTML=att.map(r=>`<tr class="border-b"><td class="p-3">${r.student_name||"—"}</td><td class="p-3">${r.student_id||studentId(r.student_name)}</td><td class="p-3">${r.class_name||"5D"}</td><td class="p-3">${formatDate(r.date)}</td><td class="p-3">${r.attendance_status||"Hadir"}</td><td class="p-3">${r.check_in_time||"—"} / ${r.check_out_time||"—"}</td></tr>`).join("")||`<tr><td colspan="6" class="p-6 text-center">Belum ada data absen.</td></tr>`;
+      $("score-recap-table").innerHTML=scores.map(r=>`<tr class="border-b"><td class="p-3">${r.student_name}</td><td class="p-3">${r.student_id||studentId(r.student_name)}</td><td class="p-3">${r.class_name||"5D"}</td><td class="p-3">${r.subject}</td><td class="p-3">${formatDate(r.date)}</td><td class="p-3">${r.score}</td></tr>`).join("")||`<tr><td colspan="6" class="p-6 text-center">Belum ada data nilai.</td></tr>`;
+      $("task-recap-table").innerHTML=tasks.map(r=>`<tr class="border-b"><td class="p-3">${r.student_name}</td><td class="p-3">${r.student_id||studentId(r.student_name)}</td><td class="p-3">${r.assignment_title}</td><td class="p-3">${r.assignment_status||"Belum dikumpulkan"}</td><td class="p-3">${r.understanding_status||"—"}</td><td class="p-3">${r.reason||"—"}</td><td class="p-3">${formatDate(r.date)}</td></tr>`).join("")||`<tr><td colspan="7" class="p-6 text-center">Belum ada respons tugas.</td></tr>`;
+    }
+
+    function renderAll() {
+      if(!currentRole) return;
+      renderStats(); renderCalendar(); renderAttendance(); renderScores(); renderAssignments(); renderRecap();
+      lucide.createIcons();
+    }
+
+    function populateStudents() {
+      ["teacher-student","score-student"].forEach(id => $(id).innerHTML=students.map(s=>`<option value="${s}">${s} · ${studentId(s)}</option>`).join(""));
+    }
+
+    function enterApp(role, student="") {
+      if(role!=="Admin" && role!=="Guru" && role!=="Siswa") return;
+      currentRole=role; currentStudent=student;
+      document.body.classList.toggle("admin-active", role==="Admin");
+      document.querySelectorAll(".recap-nav").forEach(el=>el.classList.toggle("hidden", role!=="Admin"));
+      $("login-screen").classList.add("hidden"); $("app-screen").classList.remove("hidden");
+      $("header-context").textContent = role==="Siswa" ? `${student} · Kelas 5D` : `${role} · Kelas 5D`;
+      $("dashboard-greeting").textContent=role==="Siswa"?`Selamat belajar, ${student}! Pantau aktivitas sekolahmu di sini.`:`Selamat datang, ${role}. Kelola aktivitas kelas 5D dengan mudah.`;
+      $("role-badge").innerHTML=`<i data-lucide="${role==="Siswa"?"graduation-cap":role==="Guru"?"book-open-check":"settings"}" class="w-4"></i>${role}`;
+      $("student-attendance-panel").classList.toggle("hidden", role!=="Siswa");
+      $("teacher-attendance-panel").classList.toggle("hidden", !canManage());
+      $("teacher-score-panel").classList.toggle("hidden", !canManage());
+      $("assignment-create-panel").classList.toggle("hidden", !isAdmin());
+      $("today-date").textContent = new Intl.DateTimeFormat("id-ID",{weekday:"long",day:"numeric",month:"long",year:"numeric",timeZone:"Asia/Makassar"}).format(new Date());
+      populateStudents(); renderAll(); lucide.createIcons();
+    }
+
+    function logout() {
+      currentRole=""; currentStudent=""; $("app-screen").classList.add("hidden"); $("login-screen").classList.remove("hidden"); $("student-identity").classList.add("hidden"); $("role-picker").classList.remove("hidden"); showToast("Anda telah keluar dari aplikasi.");
+    }
+
+    document.querySelectorAll("[data-role]").forEach(btn=>btn.addEventListener("click",()=>{
+      const role=btn.dataset.role;
+      if(role==="Siswa") { $("role-picker").classList.add("hidden"); $("student-identity").classList.remove("hidden"); }
+      else enterApp(role);
+    }));
+    $("identity-back").addEventListener("click",()=>{$("student-identity").classList.add("hidden");$("role-picker").classList.remove("hidden")});
+    $("student-identity").addEventListener("submit",e=>{e.preventDefault(); const s=$("student-select").value; if(!s)return showToast("Pilih identitas siswa terlebih dahulu.","error"); enterApp("Siswa",s);});
+    ["header-logout","sidebar-logout"].forEach(id=>$(id).addEventListener("click",logout));
+    $("mobile-menu").addEventListener("click",()=>$("sidebar").classList.toggle("-translate-x-full"));
+    document.querySelectorAll("[data-view]").forEach(btn=>btn.addEventListener("click",()=>{if(btn.dataset.view.includes("recap")&&!isAdmin())return;document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));$(btn.dataset.view).classList.add("active");document.querySelectorAll("[data-view]").forEach(n=>n.classList.remove("active"));btn.classList.add("active");$("sidebar").classList.add("-translate-x-full");}));
+
+    $("checkin-btn").addEventListener("click",async()=>{
+      const hour=wita().getUTCHours(); if(hour>=8) return showToast("Absen masuk ditutup setelah pukul 08.00 WITA.","error");
+      const ok=await createRecord({record_type:"attendance",student_name:currentStudent,student_id:studentId(currentStudent),class_name:"5D",subject:"",date:isoDate(),attendance_status:"Hadir",check_in_time:timeWita(),check_out_time:"",score:0,assignment_title:"",assignment_link:"",assignment_status:"",student_reflection:"",created_at:new Date().toISOString()});
+      if(ok) showToast("Absen masuk berhasil dicatat.");
+    });
+    $("checkout-btn").addEventListener("click",async()=>{
+      const hour=wita().getUTCHours(); if(hour<11) return showToast("Absen pulang tersedia mulai pukul 11.00 WITA.","error");
+      const r=records.find(x=>x.record_type==="attendance"&&x.student_name===currentStudent&&x.date===isoDate());
+      const result=await window.dataSdk.update({...r,check_out_time:timeWita()}); if(result.isOk) showToast("Absen pulang berhasil dicatat."); else showToast("Absen pulang gagal disimpan.","error");
+    });
+    $("teacher-attendance-form").addEventListener("submit",async e=>{e.preventDefault();const f=e.currentTarget;const ok=await createRecord({record_type:"attendance",student_name:$("teacher-student").value,student_id:studentId($("teacher-student").value),class_name:"5D",subject:"",date:isoDate(),attendance_status:$("teacher-status").value,check_in_time:"",check_out_time:"",score:0,assignment_title:"",assignment_link:"",assignment_status:"",student_reflection:"",created_at:new Date().toISOString()},f);if(ok){f.reset();showToast("Kehadiran siswa disimpan.");}});
+    $("score-form").addEventListener("submit",async e=>{e.preventDefault();const f=e.currentTarget,v=Number($("score-value").value);if(v<0||v>100)return showToast("Nilai harus antara 0 sampai 100.","error");const ok=await createRecord({record_type:"score",student_name:$("score-student").value,student_id:studentId($("score-student").value),class_name:"5D",subject:$("score-subject").value,date:isoDate(),attendance_status:"",check_in_time:"",check_out_time:"",score:v,assignment_title:"",assignment_link:"",assignment_status:"",student_reflection:"",created_at:new Date().toISOString()},f);if(ok){f.reset();showToast("Nilai berhasil disimpan.");}});
+    $("assignment-form").addEventListener("submit",async e=>{e.preventDefault();const f=e.currentTarget;const link=$("assignment-link-input").value;if(!/^https:\/\/classroom\.google\.com\//.test(link))return showToast("Gunakan tautan Google Classroom yang valid.","error");const ok=await createRecord({record_type:"assignment",student_name:"",subject:$("assignment-subject-input").value,date:isoDate(),attendance_status:"",check_in_time:"",check_out_time:"",score:0,assignment_title:$("assignment-title-input").value,assignment_link:link,assignment_status:"Dibuka",student_reflection:"",created_at:new Date().toISOString()},f);if(ok){f.reset();showToast("Tugas baru berhasil dibuat.");}});
+    document.addEventListener("change",e=>{if(e.target.matches(".understanding")){const title=e.target.dataset.title,area=document.querySelector(`.reason-area[data-title="${CSS.escape(title)}"]`);area.classList.toggle("hidden",e.target.value!=="Tidak paham");}});
+    document.addEventListener("click",async e=>{const reasonBtn=e.target.closest(".send-reason");if(reasonBtn){const title=reasonBtn.dataset.title,reason=document.querySelector(`.reason-input[data-title="${CSS.escape(title)}"]`).value.trim();if(!reason)return showToast("Tuliskan alasan terlebih dahulu.","error");reasonBtn.disabled=true;const existing=records.find(r=>r.record_type==="submission"&&r.student_name===currentStudent&&r.assignment_title===title);const payload={record_type:"submission",student_name:currentStudent,student_id:studentId(currentStudent),class_name:"5D",subject:"",date:isoDate(),attendance_status:"",check_in_time:"",check_out_time:"",score:0,assignment_title:title,assignment_link:"",assignment_status:existing?.assignment_status||"Belum dikumpulkan",understanding_status:"Tidak paham",reason,student_reflection:"",created_at:new Date().toISOString()};const result=existing?await window.dataSdk.update({...existing,...payload}):await window.dataSdk.create(payload);reasonBtn.disabled=false;showToast(result.isOk?"Alasan berhasil dikirim.":"Alasan gagal dikirim. Coba lagi.",result.isOk?"success":"error");return;}const b=e.target.closest(".submit-assignment");if(!b)return;const title=b.dataset.title;const existing=records.find(r=>r.record_type==="submission"&&r.student_name===currentStudent&&r.assignment_title===title);if(existing){const res=await window.dataSdk.update({...existing,assignment_status:"Sudah dikumpulkan",student_id:studentId(currentStudent),class_name:"5D"});showToast(res.isOk?"Status pengumpulan diperbarui.":"Pembaruan gagal.",res.isOk?"success":"error");}else{const ok=await createRecord({record_type:"submission",student_name:currentStudent,student_id:studentId(currentStudent),class_name:"5D",subject:"",date:isoDate(),attendance_status:"",check_in_time:"",check_out_time:"",score:0,assignment_title:title,assignment_link:"",assignment_status:"Sudah dikumpulkan",understanding_status:"",reason:"",student_reflection:"",created_at:new Date().toISOString()});if(ok)showToast("Tugas ditandai sudah dikumpulkan.");}});
+    document.addEventListener("click",e=>{const b=e.target.closest(".recap-download");if(!b)return;if(!isAdmin())return;const type=b.dataset.kind;const data=type==="attendance"?records.filter(r=>r.record_type==="attendance"):type==="score"?records.filter(r=>r.record_type==="score"):records.filter(r=>r.record_type==="submission");const rows=type==="attendance"?[["Siswa","ID","Kelas","Tanggal","Status","Masuk","Pulang"],...data.map(r=>[r.student_name,r.student_id||studentId(r.student_name),r.class_name||"5D",r.date,r.attendance_status,r.check_in_time,r.check_out_time])]:type==="score"?[["Siswa","ID","Kelas","Mata pelajaran","Tanggal","Nilai"],...data.map(r=>[r.student_name,r.student_id||studentId(r.student_name),r.class_name||"5D",r.subject,r.date,r.score])]:[["Siswa","ID","Kelas","Tugas","Status pengumpulan","Pemahaman","Alasan","Tanggal"],...data.map(r=>[r.student_name,r.student_id||studentId(r.student_name),r.class_name||"5D",r.assignment_title,r.assignment_status,r.understanding_status,r.reason,r.date])];const blob=new Blob([rows.map(r=>r.map(v=>`"${String(v??"").replace(/"/g,'""')}"`).join(",")).join("\n")],{type:"text/csv"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`rekap-${type}-sekolah-absenku.csv`;a.click();URL.revokeObjectURL(a.href);});
+    ["help-button","close-help","help-close-button"].forEach(id=>$(id).addEventListener("click",()=>$("help-modal").classList.toggle("show")));
+    $("help-modal").addEventListener("click",e=>{if(e.target===$("help-modal"))$("help-modal").classList.remove("show")});
+    document.addEventListener("keydown",e=>{if(e.key==="Escape")$("help-modal").classList.remove("show")});
+    setInterval(()=>{if(currentRole)renderAttendance()},30000);
+    document.addEventListener("DOMContentLoaded",()=>{lucide.createIcons();initData()});
+  </script>
+ 
+</body></html>
